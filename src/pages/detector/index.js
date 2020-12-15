@@ -255,7 +255,7 @@ function DetectorPage() {
                     Voltar
                 </button>
                 <div className="div-title-result">
-                    <h1 className="title-result">A noticia que você pesquisou é {userInput.veredict == true ? "verdadeira!" : "falsa!"}</h1>
+                    <h1 className="title-result">A notícia que você pesquisou parece ser {userInput.veredict == true ? "verdadeira!" : "falsa!"}</h1>
                 </div>
 
                 <textarea className="content-textarea" value={userInput.content} readOnly />
