@@ -1,0 +1,66 @@
+endpoints : 
+
+
+1 ) http://tcspedroverani.herokuapp.com/news/scrap 
+Aqui envia-se uma url e devolverá o conteúdo;
+Exemplo de body: 
+{
+  "url": "https://www.hltv.org/news/30388/navi-stop-heroics-hot-streak-as-electronic-puts-up-career-high-performance-move-on-to-epl-grand-final"
+  
+}
+
+Retorno será uma String com o conteudo
+
+Headers : content-type : application/json e accept : application/json
+
+2) http://tcspedroverani.herokuapp.com/news/create
+
+Exemplo de body : 
+{
+  "url": "",
+  "content": "Despite amassing great momentum in the playoffs, the Danes were no match to Natus Vincere in the fight for the first grand final spot at ESL Pro League Season 12.Heroic had looked like one of the main favorites in the playoffs after turning up in unstoppable form against Astralis and BIG in the opening two rounds of the upper bracket, but the Denis electronic⁠ Sharipov-powered Natus Vincere turned out too tough to crack in the upper final.The Danes now await their fate in the consolidation final, slated to take place on Saturday at 16:00 , where they will be joined by the winner of the lower final between Astralis and mousesports, played on the same day at 09:00 .The rematch from the group stage, where Natus Vincere had won in a three-map nailbiter, saw both teams go a different direction in the veto after trading map picks the first time around. Instead of Overpass, Heroic picked Inferno, but the choice ended up backfiring as they struggled for breathing room from start to finish."
+  
+}
+Objeto com propriedade url e content
+
+
+3)  http://tcspedroverani.herokuapp.com/user/recover
+Endpoint pra recuperar a senha 
+enviar objeto com propriedade email : email
+
+4) GET   https://tcspedroverani.herokuapp.com/user/clean
+Ao bater na url o usuário da sessão terá todo o histórico deletado, (não vai funcionar no teu react)
+
+5) http://tcspedroverani.herokuapp.com/user/login
+Aqui recebe um objeto  { 
+userName: ‘pedrosarkisverani@gmail.com’
+userPassword:’ssffdd66’ }
+
+Por enquanto o retorno será somente  ‘Ok’ ou ‘ A senha está incorreta’ 
+
+6)GET   http://tcspedroverani.herokuapp.com/user/history
+Pega todas as notícias do usuário, não vai funcionário no react ainda
+
+7)  http://tcspedroverani.herokuapp.com/group/create
+
+enviar um objeto 
+{
+groupDescription: ‘Esse é o grupo dos amigos idiotas’, 
+groupName: ‘Grupo dos bolados’, 
+groupParticipants: ‘pedrosarkisverani@gmail, pablo.bion@ahgora.com.br,dimayma@exact.com, carlos@brigadeiroCachorro.uol.br’,
+createdBy: ‘pedro.verani@ahgora.com.br’,
+}
+Emails separados por vírgula.
+
+8) GET http://tcspedroverani.herokuapp.com/group/view
+Ele vai retornar o grupo do usuário logado, não vai funcionar no react ainda 
+
+9)http://tcspedroverani.herokuapp.com/user/create
+Aqui é pra mandar um objeto 
+{
+email: ‘pedropverani@hotmail.com’.
+password: ‘ssffdd66’,
+}
+Vai te devolver um oauth: true (se der certo) , e um token que é o jwt ( esse jwt voce tem que salvar no local storage do usuario)
+
+
